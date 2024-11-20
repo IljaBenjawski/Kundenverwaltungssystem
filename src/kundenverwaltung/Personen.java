@@ -12,17 +12,19 @@ public class Personen {
 
 
     public Personen( String name, String adresse, int anzahlBestellungen, boolean istPremiumkunde, int wichtigkeit ){
+        this.name = name;
+        this.adresse = adresse;
+        this.anzahlBestellungen = anzahlBestellungen;
+        this.istPremiumkunde = istPremiumkunde;
+        this.wichtigkeit = wichtigkeit;
+    }
 
-    }
-    public int getAnzahlBestellungen(){
-        return this.anzahlBestellungen;
-    }
     public void setAnzahlBestellungen(int anzahlBestellungen){
         this.anzahlBestellungen = anzahlBestellungen;
     }
-    public int ergaenzeBestellungen(int ergaenzung){
-       int bestellunsvolumen =getAnzahlBestellungen() + ergaenzung;
-        return bestellunsvolumen;
+    public void ergaenzeBestellungen(int ergaenzung){
+        this.anzahlBestellungen = anzahlBestellungen + ergaenzung;
+
         // bestellVolumen fehlt noch
     }
 
