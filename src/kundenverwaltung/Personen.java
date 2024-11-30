@@ -1,33 +1,21 @@
 package kundenverwaltung;
 
-public class Personen {
+public abstract class Personen {
 
-    // public boolean istJurPerson;
-    public String name;
-    public String adresse;
-    // bei Jur public boolean istKapitalgesellschaft;
-    public int anzahlBestellungen;
-    public boolean istPremiumkunde;
-    public int wichtigkeit;
+    final String name;
+    final String adresse;
+    protected int anzahlBestellungen;
+    protected int bisherigesBestellvolumen;
 
-
-    public Personen( String name, String adresse, int anzahlBestellungen, boolean istPremiumkunde, int wichtigkeit ){
+    public Personen( String name, String adresse, int anzahlBestellungen, int bisherigesBestellvolumen){
         this.name = name;
         this.adresse = adresse;
         this.anzahlBestellungen = anzahlBestellungen;
-        this.istPremiumkunde = istPremiumkunde;
-        this.wichtigkeit = wichtigkeit;
+        this.bisherigesBestellvolumen = bisherigesBestellvolumen;
     }
 
-    public void setAnzahlBestellungen(int anzahlBestellungen){
-        this.anzahlBestellungen = anzahlBestellungen;
-    }
-    public void ergaenzeBestellungen(int ergaenzung){
-        this.anzahlBestellungen = anzahlBestellungen + ergaenzung;
-
-        // bestellVolumen fehlt noch
-    }
-
-
+    public abstract int ergaenzeBestellungen(int ergaenzung);
+    public abstract double berechneWichtigkeit();
+    public abstract String lieferePostanschrift();
 
 }
